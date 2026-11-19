@@ -1,5 +1,9 @@
 function Header({ total }) {
   return (
-    <h2>Universidades del Perú ({total})</h2>
+    <header style={{ marginBottom: '20px' }}>
+      <h1>Universidades del Perú ({total})</h1>
+    </header>
   );
 }
+
+export default Header;

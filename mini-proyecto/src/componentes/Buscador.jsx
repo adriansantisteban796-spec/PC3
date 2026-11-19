@@ -1,20 +1,15 @@
 function Buscador({ busqueda, alBuscar }) {
   return (
-    <input
-      type="text"
-      placeholder="Buscar por nombre o dominio (ej. UTP, pucp, edu.pe)..."
-      value={busqueda}
-      onChange={(e) => alBuscar(e.target.value)}
-      style={{
-        padding: '10px',
-        width: '100%',
-        boxSizing: 'border-box',
-        marginBottom: '20px',
-        fontSize: '16px'
-      }}
-    />
+    <div style={{ marginBottom: '20px' }}>
+      <input
+        type="text"
+        placeholder="Buscar por nombre o dominio..."
+        value={busqueda}
+        onChange={(e) => alBuscar(e.target.value)}
+        style={{ width: '100%', padding: '10px', fontSize: '16px', boxSizing: 'border-box' }}
+      />
+    </div>
   );
 }
 
 export default Buscador;
-EOF

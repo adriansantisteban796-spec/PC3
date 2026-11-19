@@ -9,10 +9,13 @@ function App() {
   const [cargando, setCargando] = useState(true);
 
   useEffect(() => {
-    fetch('http://universities.hipolabs.com/search?country=Peru')
+    fetch('https://raw.githubusercontent.com/Hipo/university-domains-list/master/world_universities_and_domains.json')
       .then((res) => res.json())
       .then((data) => {
-        setUniversidades(Array.isArray(data) ? data : []);
+        const peru = Array.isArray(data)
+          ? data.filter((u) => u.country === 'Peru')
+          : [];
+        setUniversidades(peru);
         setCargando(false);
       })
       .catch((err) => {
